@@ -108,26 +108,26 @@
         "namespace": "EnginesSystem",
         "type_path": "database/sql/mysql",
         "variables": {
-          "collation": "",
-          "db_flavor": "",
+          "collation": null,
+          "db_flavor": null,
           "db_password": "_Engines_System(random(10))",
           "db_username": "_Engines_Builder(engine_name)",
           "database_name": "_Engines_Builder(engine_name)",
           "database_host": "_Engines_System(mysql_host)",
           "name": "_Engines_Builder(engine_name)",
-          "full_access": ""
+          "full_access": null
         }
       },
       {
         "namespace": "EnginesSystem",
         "type_path": "filesystem/local/filesystem",
         "variables": {
-          "user": null,
-          "volume_src": null,
-          "permissions": null,
-          "group": null,
-          "service_name": null,
-          "engine_path": null
+          "user": "_Engines_Builder(data_uid)",
+          "volume_src": "",
+          "permissions": "",
+          "group": "_Engines_Builder(data_gid)",
+          "service_name": "_Engines_Builder(engine_name)_data",
+          "engine_path": ""
         }
       },
       {
