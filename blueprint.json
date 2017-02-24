@@ -99,9 +99,9 @@
           "permissions": "rw",
           "engine_path": "config",
           "volume_src": " ",
-          "service_name": null,
+          "service_name": "",
           "group": null,
-          "user": null
+          "user": ""
         }
       },
       {
@@ -111,11 +111,11 @@
           "collation": "utf8_general_ci",
           "db_flavor": "mysql2",
           "db_password": null,
-          "db_username": null,
-          "database_name": null,
-          "database_host": null,
-          "name": null,
-          "full_access": "0"
+          "db_username": "",
+          "database_name": "",
+          "database_host": "",
+          "name": "",
+          "full_access": "false"
         }
       },
       {
@@ -125,7 +125,7 @@
           "user": null,
           "volume_src": " ",
           "permissions": "rw",
-          "group": null,
+          "group": "",
           "service_name": null,
           "engine_path": "data"
         }
