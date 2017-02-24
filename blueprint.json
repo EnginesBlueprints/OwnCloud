@@ -99,9 +99,9 @@
           "permissions": "rw",
           "engine_path": "config",
           "volume_src": "",
-          "service_name": null,
+          "service_name": "",
           "group": null,
-          "user": null
+          "user": ""
         }
       },
       {
