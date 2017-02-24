@@ -86,36 +86,36 @@
         "namespace": "EnginesSystem",
         "type_path": "cron",
         "variables": {
-          "title": "cronjobf",
-          "cron_job": "/usr/bin/php -f /home/app/cron.php",
-          "action_type": "command",
-          "when": "*/15 * * * * "
+          "title": null,
+          "cron_job": null,
+          "action_type": null,
+          "when": null
         }
       },
       {
         "namespace": "EnginesSystem",
         "type_path": "filesystem/local/filesystem",
         "variables": {
-          "permissions": "rw",
-          "engine_path": "config",
-          "volume_src": "",
-          "service_name": null,
-          "group": null,
-          "user": ""
+          "permissions": null,
+          "engine_path": null,
+          "volume_src": null,
+          "service_name": "_Engines_Builder(engine_name)_config",
+          "group": "_Engines_Builder(data_gid)",
+          "user": "_Engines_Builder(data_uid)"
         }
       },
       {
         "namespace": "EnginesSystem",
         "type_path": "database/sql/mysql",
         "variables": {
-          "collation": "utf8_general_ci",
-          "db_flavor": "mysql2",
-          "db_password": null,
-          "db_username": "",
-          "database_name": "",
-          "database_host": "",
-          "name": "",
-          "full_access": "false"
+          "collation": "",
+          "db_flavor": "",
+          "db_password": "_Engines_System(random(10))",
+          "db_username": "_Engines_Builder(engine_name)",
+          "database_name": "_Engines_Builder(engine_name)",
+          "database_host": "_Engines_System(mysql_host)",
+          "name": "_Engines_Builder(engine_name)",
+          "full_access": ""
         }
       },
       {
@@ -123,30 +123,30 @@
         "type_path": "filesystem/local/filesystem",
         "variables": {
           "user": null,
-          "volume_src": "",
-          "permissions": "rw",
-          "group": "",
+          "volume_src": null,
+          "permissions": null,
+          "group": null,
           "service_name": null,
-          "engine_path": "data"
+          "engine_path": null
         }
       },
       {
         "namespace": "EnginesSystem",
         "type_path": "logview",
         "variables": {
-          "log_name": "owncloud",
-          "log_file_path": "owncloud.log",
-          "log_type": "raw"
+          "log_name": null,
+          "log_file_path": null,
+          "log_type": null
         }
       },
       {
         "namespace": "EnginesSystem",
         "type_path": "log_rotate",
         "variables": {
-          "log_file_path": "owncloud.log",
-          "cycle": "weekly",
-          "rotate": "12",
-          "log_name": "owncloud.log"
+          "log_file_path": null,
+          "cycle": null,
+          "rotate": null,
+          "log_name": null
         }
       }
     ],
