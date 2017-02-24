@@ -86,19 +86,19 @@
         "namespace": "EnginesSystem",
         "type_path": "cron",
         "variables": {
-          "title": "",
-          "cron_job": "",
-          "action_type": "",
-          "when": ""
+          "title": "_Engines_Builder(engine_name)",
+          "cron_job": null,
+          "action_type": null,
+          "when": null
         }
       },
       {
         "namespace": "EnginesSystem",
         "type_path": "filesystem/local/filesystem",
         "variables": {
-          "permissions": null,
-          "engine_path": null,
-          "volume_src": null,
+          "permissions": "rw",
+          "engine_path": "config",
+          "volume_src": "",
           "service_name": "_Engines_Builder(engine_name)_config",
           "group": "_Engines_Builder(data_gid)",
           "user": "_Engines_Builder(data_uid)"
@@ -108,14 +108,14 @@
         "namespace": "EnginesSystem",
         "type_path": "database/sql/mysql",
         "variables": {
-          "collation": null,
-          "db_flavor": null,
+          "collation": "utf8_general_ci",
+          "db_flavor": "mysql",
           "db_password": "_Engines_System(random(10))",
           "db_username": "_Engines_Builder(engine_name)",
           "database_name": "_Engines_Builder(engine_name)",
           "database_host": "_Engines_System(mysql_host)",
           "name": "_Engines_Builder(engine_name)",
-          "full_access": null
+          "full_access": "false"
         }
       },
       {
@@ -123,20 +123,20 @@
         "type_path": "filesystem/local/filesystem",
         "variables": {
           "user": "_Engines_Builder(data_uid)",
-          "volume_src": null,
-          "permissions": null,
+          "volume_src": "",
+          "permissions": "rw",
           "group": "_Engines_Builder(data_gid)",
           "service_name": "_Engines_Builder(engine_name)_data",
-          "engine_path": null
+          "engine_path": "data"
         }
       },
       {
         "namespace": "EnginesSystem",
         "type_path": "logview",
         "variables": {
-          "log_name": null,
-          "log_file_path": null,
-          "log_type": null
+          "log_name": "_Engines_Builder(engine_name)",
+          "log_file_path": "",
+          "log_type": ""
         }
       },
       {
