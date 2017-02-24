@@ -98,10 +98,10 @@
         "variables": {
           "permissions": "rw",
           "engine_path": "config",
-          "volume_src": " ",
-          "service_name": "",
+          "volume_src": "",
+          "service_name": null,
           "group": null,
-          "user": ""
+          "user": null
         }
       },
       {
