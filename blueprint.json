@@ -86,10 +86,10 @@
         "namespace": "EnginesSystem",
         "type_path": "cron",
         "variables": {
-          "title": null,
-          "cron_job": null,
-          "action_type": null,
-          "when": null
+          "title": "",
+          "cron_job": "",
+          "action_type": "",
+          "when": ""
         }
       },
       {
@@ -123,11 +123,11 @@
         "type_path": "filesystem/local/filesystem",
         "variables": {
           "user": "_Engines_Builder(data_uid)",
-          "volume_src": "",
-          "permissions": "",
+          "volume_src": null,
+          "permissions": null,
           "group": "_Engines_Builder(data_gid)",
           "service_name": "_Engines_Builder(engine_name)_data",
-          "engine_path": ""
+          "engine_path": null
         }
       },
       {
