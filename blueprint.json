@@ -87,9 +87,9 @@
         "type_path": "cron",
         "variables": {
           "title": "_Engines_Builder(engine_name)",
-          "cron_job": null,
-          "action_type": null,
-          "when": null
+          "cron_job": "/usr/bin/php -f /home/app/cron.php",
+          "action_type": "command",
+          "when": "*/15 * * * *"
         }
       },
       {
@@ -132,21 +132,12 @@
       },
       {
         "namespace": "EnginesSystem",
-        "type_path": "logview",
-        "variables": {
-          "log_name": "_Engines_Builder(engine_name)",
-          "log_file_path": "",
-          "log_type": ""
-        }
-      },
-      {
-        "namespace": "EnginesSystem",
         "type_path": "log_rotate",
         "variables": {
-          "log_file_path": null,
-          "cycle": null,
-          "rotate": null,
-          "log_name": null
+          "log_file_path": "owncloud.log",
+          "cycle": "weekly",
+          "rotate": "12",
+          "log_name": "owncloud.log"
         }
       }
     ],
