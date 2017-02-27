@@ -49,7 +49,7 @@
     "scripts": {
       "start": {
         "language": "sh",
-        "content": "#/bin/bash\r\n\r\nif ! test -f /engines/var/run/flags/setup_ca\r\n then\r\n cat /usr/local/share/ca-certificates/engines_internal_ca.crt  >  resources/config/ca-bundle\r\ntouch /engines/var/run/flags/setup_ca\r\nfi\r\n\r\n"
+        "content": "\r\n\r\n"
       },
       "install": {
         "language": "sh",
@@ -57,7 +57,7 @@
       },
       "post_install": {
         "language": "sh",
-        "content": ""
+        "content": "#/bin/bash\r\n\r\nif ! test -f /engines/var/run/flags/setup_ca\r\n then\r\n cat /usr/local/share/ca-certificates/engines_internal_ca.crt  >  resources/config/ca-bundle\r\ntouch /engines/var/run/flags/setup_ca\r\nfi"
       },
       "shutdown": {
         "language": "sh",
