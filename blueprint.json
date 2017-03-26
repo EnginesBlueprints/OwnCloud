@@ -83,7 +83,7 @@
     ],
     "service_configurations": [
       {
-        "namespace": "EnginesSystem",
+        "publisher_namespace": "EnginesSystem",
         "type_path": "cron",
         "variables": {
           "title": "_Engines_Builder(engine_name)",
@@ -93,7 +93,7 @@
         }
       },
       {
-        "namespace": "EnginesSystem",
+        "publisher_namespace": "EnginesSystem",
         "type_path": "filesystem/local/filesystem",
         "variables": {
           "permissions": "rw",
@@ -105,7 +105,7 @@
         }
       },
       {
-        "namespace": "EnginesSystem",
+        "publisher_namespace": "EnginesSystem",
         "type_path": "database/sql/mysql",
         "variables": {
           "collation": "utf8_general_ci",
@@ -119,7 +119,7 @@
         }
       },
       {
-        "namespace": "EnginesSystem",
+        "publisher_namespace": "EnginesSystem",
         "type_path": "filesystem/local/filesystem",
         "variables": {
           "user": "_Engines_Builder(data_uid)",
@@ -131,7 +131,7 @@
         }
       },
       {
-        "namespace": "EnginesSystem",
+        "publisher_namespace": "EnginesSystem",
         "type_path": "log_rotate",
         "variables": {
           "log_file_path": "owncloud.log",
