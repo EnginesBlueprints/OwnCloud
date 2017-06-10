@@ -19,17 +19,14 @@
     "software": {
       "display": {
         "title": "Own Cloud",
-        "label": "owncloud",
-        "version": "",
-        "description": "",
-        "url": ""
+        "label": "owncloud"
       },
       "license": {
         "label": "GNU GENERAL PUBLIC LICENSE V3",
         "url": "http://www.gnu.org/copyleft/gpl.html"
       }
     },
-    "timestamp": "2017-04-28 00:26:15 UTC"
+    "timestamp": "2017-06-10 01:44:10 UTC"
   },
   "software": {
     "base": {
@@ -38,94 +35,69 @@
       "deployment_type": "web",
       "http_protocol": "https_only",
       "framework_port_override": 0,
-      "web_root_directory": "",
-      "continuous_deployment": false,
       "memory": {
         "required": 196,
         "recommended": 256
       },
-      "install_form_comment": "",
-      "first_run_url": "",
       "installation_report": "Goto _Engines_Builder(http_protocol)://_Engines_Builder(fqdn)/\r\n\r\nFill in Admin user as a new user\r\nMysql host _Engines_Environment(dbhost)\r\nDatabase Name _Engines_Environment(dbname)\r\nDatabase User _Engines_Environment(dbuser)\r\nDatabase Password _Engines_Environment(dbpasswd)"
     },
-    "ports": [
-
-    ],
     "scripts": {
       "start": {
-        "language": "sh",
-        "content": "\r\n\r\n"
+        "language": "sh"
       },
       "install": {
-        "language": "sh",
-        "content": ""
+        "language": "sh"
       },
       "post_install": {
         "language": "sh",
         "content": "#/bin/bash\r\n\r\nif ! test -f /engines/var/run/flags/setup_ca\r\n then\r\n cat /usr/local/share/ca-certificates/engines_internal_ca.crt  >  resources/config/ca-bundle\r\ntouch /engines/var/run/flags/setup_ca\r\nfi"
       },
       "shutdown": {
-        "language": "sh",
-        "content": ""
+        "language": "sh"
       }
     },
-    "external_repositories": [
-
-    ],
     "system_packages": [
       {
-        "package": "php-imagick",
-        "version": ""
+        "package": "php-imagick"
       },
       {
-        "package": "php-curl",
-        "version": ""
+        "package": "php-curl"
       },
       {
-        "package": "libicu-dev",
-        "version": ""
+        "package": "libicu-dev"
       },
       {
-        "package": "php7.0-gd",
-        "version": ""
+        "package": "php7.0-gd"
       },
       {
-        "package": "libreoffice-base-core",
-        "version": ""
+        "package": "libreoffice-base-core"
       },
       {
-        "package": "php7.0-json",
-        "version": ""
+        "package": "php7.0-json"
       },
       {
-        "package": "libreoffice-common",
-        "version": ""
+        "package": "libreoffice-common"
       },
       {
-        "package": "libav-tools",
-        "version": ""
+        "package": "libav-tools"
       },
       {
-        "package": "php-net-ftp",
-        "version": ""
+        "package": "php-net-ftp"
       },
       {
-        "package": "php7.0-mcrypt",
-        "version": ""
+        "package": "php7.0-mcrypt"
       },
       {
-        "package": "openjdk-9-jre-headless",
-        "version": ""
+        "package": "openjdk-9-jre-headless"
       },
       {
-        "package": "php7.0-ldap",
-        "version": ""
+        "package": "php7.0-ldap"
       }
     ],
     "installed_packages": [
       {
-        "name": "owncloud-9.1.4.tar.bz2",
-        "source_url": "https://download.owncloud.org/community/owncloud-9.1.4.tar.bz2",
+        "name": "owncloud-9.1.6.tar.bz2",
+        "source_url": "https://download.owncloud.org/community/owncloud-9.1.6.tar.bz2",
         "destination": "./",
         "extraction_command": "tar -xpf",
         "path_to_extracted": "owncloud"
@@ -139,13 +111,11 @@
       },
       {
         "name": "negotiation",
-        "type": "apache",
-        "os_package": ""
+        "type": "apache"
       },
       {
         "name": "rewrite",
-        "type": "apache",
-        "os_package": ""
+        "type": "apache"
       },
       {
         "name": "php-zip",
@@ -154,8 +124,7 @@
       },
       {
         "name": "headers",
-        "type": "apache",
-        "os_package": ""
+        "type": "apache"
       }
     ],
     "service_configurations": [
@@ -218,9 +187,6 @@
         }
       }
     ],
-    "environment_variables": [
-
-    ],
     "template_files": [
       {
         "path": "app/config/config.php",
@@ -228,26 +194,19 @@
         "content": "<?php\r\n\r\n$CONFIG = array(\r\n\r\n\r\n'instanceid' => 'oc_Engines_System(random(14))',\r\n'passwordsalt' => '_Engines_System(random(14))',\r\n\r\n'trusted_domains' =>\r\n  array (\r\n   '_Engines_Builder(fqdn)',\r\n'_Engines_Builder(hostname).engines.local',   \r\n  ),\r\n\r\n'datadirectory' => '/home/fs/data',\r\n'version' => '',\r\n'dbtype' => 'mysql',\r\n'dbhost' => '_Engines_Environment(dbhost)',\r\n'dbuser' => '_Engines_Environment(dbuser)',\r\n'dbname' => '_Engines_Environment(dbname)',\r\n'dbpassword' => '_Engines_Environment(dbpasswd)',\r\n'dbtableprefix' => '',\r\n'installed' => false,\r\n'default_language' => 'en',\r\n'defaultapp' => 'files',\r\n'knowledgebaseenabled' => true,\r\n'enable_avatars' => true,\r\n'allow_user_to_change_display_name' => true,\r\n'remember_login_cookie_lifetime' => 60*60*24*15,\r\n'session_lifetime' => 60 * 60 * 24,\r\n'session_keepalive' => true,\r\n'skeletondirectory' => '',\r\n'mail_domain' => '_Engines_Builder(fqdn)',\r\n'mail_from_address' => 'owncloud@_Engines_Builder(fqdn)',\r\n'mail_smtpdebug' => false,\r\n'mail_smtpmode' => 'smtp',\r\n'mail_smtphost' => '_Engines_System(smtp_host)',\r\n'mail_smtpport' => 25,\r\n'mail_smtptimeout' => 10,\r\n'mail_smtpsecure' => false,\r\n'mail_smtpauth' => false,\r\n'mail_smtpauthtype' => 'LOGIN',\r\n'mail_smtpname' => '',\r\n'mail_smtppassword' => '',\r\n'overwritehost' => '',\r\n\r\n'overwriteprotocol' => '',\r\n\r\n'overwritewebroot' => '',\r\n'overwritecondaddr' => '',\r\n'overwrite.cli.url' => '',\r\n'trashbin_retention_obligation' => 30,\r\n\r\n\r\n'trashbin_auto_expire' => true,\r\n'appcodechecker' => false,\r\n'updatechecker' => true,\r\n'has_internet_connection' => true,\r\n'check_for_working_webdav' => true,\r\n'check_for_working_htaccess' => true,\r\n'log_type' => 'owncloud',\r\n'logfile' => '/var/log/owncloud.log',\r\n'loglevel' => 1,\r\n'logdateformat' => 'F d, Y H:i:s',\r\n\r\n/**\r\n * The default timezone for logfiles is UTC. You may change this; see\r\n * http://php.net/manual/en/timezones.php\r\n */\r\n'logtimezone' => '_Engines_System(timezone_country_city)',\r\n          \r\n/**\r\n * Append all database queries and parameters to the log file. Use this only for\r\n * debugging, as your logfile will become huge.\r\n */\r\n'log_query' => false,\r\n\r\n/**\r\n * Log successful cron runs.\r\n */\r\n'cron_log' => true,\r\n'log_rotate_size' => false,\r\n'3rdpartyroot' => '',\r\n'3rdpartyurl' => '',\r\n\r\n'customclient_desktop' =>\r\n        'http://owncloud.org/sync-clients/',\r\n'customclient_android' =>\r\n        'https://play.google.com/store/apps/details?id=com.owncloud.android',\r\n'customclient_ios' =>\r\n        'https://itunes.apple.com/us/app/owncloud/id543672169?mt=8',\r\n'appstoreenabled' => true,\r\n'appstoreurl' => 'https://api.owncloud.com/v1',\r\n'apps_paths' => array(\r\n        array(\r\n                'path'=> '/home/app/apps',\r\n                'url' => '/apps',\r\n                'writable' => true,\r\n        ),\r\n),\r\n\r\n'enable_previews' => true,\r\n'preview_max_x' => null,\r\n'preview_max_y' => null,\r\n'preview_max_scale_factor' => 10,\r\n'preview_libreoffice_path' =>  '/usr/lib/libreoffice/program/soffice',\r\n/**\r\n * Use this if LibreOffice/OpenOffice requires additional arguments.\r\n */\r\n'preview_office_cl_parameters' =>\r\n        ' --headless --nologo --nofirststartwizard --invisible --norestore '.\r\n        '-convert-to pdf -outdir ',\r\n'enabledPreviewProviders' => array(\r\n        'OCPreviewImage',\r\n        'OCPreviewMP3',\r\n        'OCPreviewTXT',\r\n        'OCPreviewMarkDown'\r\n),\r\n'maintenance' => false,\r\n'singleuser' => false,\r\n'forcessl' => false,\r\n'blacklisted_files' => array('.htaccess'),\r\n'share_folder' => '/',\r\n'theme' => '',\r\n'xframe_restriction' => true,\r\n'cipher' => 'AES-256-CFB',\r\n\r\n'cache_path' => '',\r\n'quota_include_external_storage' => false,\r\n'filesystem_check_changes' => 1,\r\n'asset-pipeline.enabled' => false,\r\n'mount_file' => 'data/mount.json',\r\n'filesystem_cache_readonly' => false,\r\n\r\n'custom_csp_policy' =>\r\n        \"default-src 'self'; script-src 'self' 'unsafe-eval'; \".\r\n        \"style-src 'self' 'unsafe-inline'; frame-src *; img-src *; \".\r\n        \"font-src 'self' data:; media-src *\",\r\n'secret' => '_Engines_System(random(32))',\r\n\r\n);\r\n\r\n  \t"
       }
     ],
-    "replacement_strings": [
-
-    ],
     "database_seed": {
-      "language": "text",
-      "content": "",
-      "script": false
+      "language": "text"
     },
     "file_write_permissions": [
       {
-        "path": "config",
-        "recursive": false
+        "path": "config"
       },
       {
         "path": "apps",
         "recursive": true
       },
       {
-        "path": "resources/config/ca-bundle",
-        "recursive": false
+        "path": "resources/config/ca-bundle"
       }
     ],
     "persistent_directories": [
@@ -255,41 +214,15 @@
         "path": "app/config"
       }
     ],
-    "persistent_files": [
-
-    ],
     "components": {
-      "path": "/home/app/apps",
-      "extract": false,
-      "sources": [
-
-      ]
+      "path": "/home/app/apps"
     },
-    "workers": {
-      "blocking": "",
-      "commands": [
-
+    "framework_specific": {
+      "custom_php_inis": [
+        {
+          "content": "; Maximum allowed size for uploaded files.\r\nupload_max_filesize = 140M\r\n\r\n; Must be greater than or equal to upload_max_filesize\r\npost_max_size = 140M"
+        }
       ]
-    },
-    "rake_tasks": [
-
-    ],
-    "custom_php_inis": [
-      {
-        "content": "; Maximum allowed size for uploaded files.\r\nupload_max_filesize = 140M\r\n\r\n; Must be greater than or equal to upload_max_filesize\r\npost_max_size = 140M"
-      }
-    ],
-    "apache_htaccess_files": [
-
-    ],
-    "apache_httpd_configurations": [
-
-    ],
-    "actionators": [
-
-    ],
-    "schedules": [
-
-    ]
+    }
   }
 }
