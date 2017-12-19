@@ -2,8 +2,8 @@
   "schema": {
     "type": "app_blueprint",
     "version": {
-      "major": 1,
-      "minor": 0
+      "major": 0,
+      "minor": 1
     },
     "origin": "Engines Developer Studio 0.2"
   },
@@ -19,14 +19,15 @@
     "software": {
       "display": {
         "title": "Own Cloud",
-        "label": "owncloud"
+        "label": "owncloud",
+        "version": "10.0.4"
       },
       "license": {
         "label": "GNU GENERAL PUBLIC LICENSE V3",
         "url": "http://www.gnu.org/copyleft/gpl.html"
       }
     },
-    "timestamp": "2017-10-31T10:24:06+11:00"
+    "timestamp": "2017-12-19T11:17:34+11:00"
   },
   "software": {
     "base": {
@@ -96,8 +97,8 @@
     ],
     "installed_packages": [
       {
-        "name": "owncloud-9.1.6.tar.bz2",
-        "source_url": "https://download.owncloud.org/community/owncloud-9.1.6.tar.bz2",
+        "name": "owncloud-10.0.4.tar.bz2",
+        "source_url": "https://download.owncloud.org/community/owncloud-10.0.4.tar.bz2",
         "destination": "./",
         "extraction_command": "tar -xpf",
         "path_to_extracted": "owncloud"
@@ -132,10 +133,11 @@
         "publisher_namespace": "EnginesSystem",
         "type_path": "cron",
         "variables": {
-          "title": "_Engines_Builder(engine_name)",
-          "cron_job": "/usr/bin/php -f /home/app/cron.php",
           "action_type": "command",
-          "when": "*/15 * * * *"
+          "cron_job": "/usr/bin/php -f /home/app/cron.php",
+          "titlt": "15 Minutes",
+          "when": "*/15 * * * *",
+          "notication_address": "default"
         }
       },
       {
@@ -154,13 +156,11 @@
         "publisher_namespace": "EnginesSystem",
         "type_path": "database/sql/mysql",
         "variables": {
-          "collation": "utf8_general_ci",
-          "db_flavor": "mysql",
-          "db_password": "_Engines_System(random(10))",
-          "db_username": "_Engines_Builder(engine_name)",
           "database_name": "_Engines_Builder(engine_name)",
           "database_host": "_Engines_System(mysql_host)",
-          "name": "_Engines_Builder(engine_name)",
+          "db_username": "_Engines_Builder(engine_name)",
+          "db_password": "_Engines_System(random(10))",
+          "collation": "utf8_general_ci",
           "full_access": "false"
         }
       },
@@ -174,6 +174,13 @@
           "group": "_Engines_Builder(data_gid)",
           "service_name": "_Engines_Builder(engine_name)_data",
           "engine_path": "data"
+        }
+      },
+      {
+        "publisher_namespace": "EnginesSystem",
+        "type_path": "auth",
+        "variables": {
+          "kerberos": "_Engines_Builder(engine_name)"
         }
       }
     ],
