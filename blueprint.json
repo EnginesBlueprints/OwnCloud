@@ -27,7 +27,7 @@
         "url": "http://www.gnu.org/copyleft/gpl.html"
       }
     },
-    "timestamp": "2018-02-01T14:56:10+11:00"
+    "timestamp": "2018-02-01T15:29:12+11:00"
   },
   "software": {
     "base": {
@@ -181,7 +181,7 @@
         "type_path": "auth",
         "variables": {
           "kerberos": "_Engines_Builder(engine_name)",
-          "owner": "_Engines_Builder(cont_userid)"
+          "owner": "_Engines_Builder(cont_user_id)"
         }
       }
     ],
