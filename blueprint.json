@@ -27,7 +27,7 @@
         "url": "http://www.gnu.org/copyleft/gpl.html"
       }
     },
-    "timestamp": "2018-02-01T14:22:37+11:00"
+    "timestamp": "2018-02-01T14:56:10+11:00"
   },
   "software": {
     "base": {
@@ -135,7 +135,7 @@
         "variables": {
           "action_type": "command",
           "cron_job": "/usr/bin/php -f /home/app/cron.php",
-          "titlt": "15 Minutes",
+          "title": "15min",
           "when": "*/15 * * * *",
           "notication_address": "default"
         }
@@ -180,7 +180,8 @@
         "publisher_namespace": "EnginesSystem",
         "type_path": "auth",
         "variables": {
-          "kerberos": "_Engines_Builder(engine_name)"
+          "kerberos": "_Engines_Builder(engine_name)",
+          "owner": "_Engines_Builder(cont_userid)"
         }
       }
     ],
