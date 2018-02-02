@@ -27,7 +27,7 @@
         "url": "http://www.gnu.org/copyleft/gpl.html"
       }
     },
-    "timestamp": "2018-02-01T17:54:32+11:00"
+    "timestamp": "2018-02-02T19:46:27+11:00"
   },
   "software": {
     "base": {
@@ -97,8 +97,8 @@
     ],
     "installed_packages": [
       {
-        "name": "owncloud-10.0.4.tar.bz2",
-        "source_url": "https://download.owncloud.org/community/owncloud-10.0.4.tar.bz2",
+        "name": "owncloud-10.0.6.tar.bz2",
+        "source_url": "https://download.owncloud.org/community/owncloud-10.0.6.tar.bz2",
         "destination": "./",
         "extraction_command": "tar -xpf",
         "path_to_extracted": "owncloud"
