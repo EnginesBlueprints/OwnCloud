@@ -27,7 +27,7 @@
         "url": "http://www.gnu.org/copyleft/gpl.html"
       }
     },
-    "timestamp": "2018-02-02T19:46:27+11:00"
+    "timestamp": "2018-02-05T10:43:55+11:00"
   },
   "software": {
     "base": {
@@ -137,7 +137,7 @@
           "cron_job": "/usr/bin/php -f /home/app/cron.php",
           "title": "15min",
           "when": "*/15 * * * *",
-          "notication_address": "default"
+          "notification_address": "default"
         }
       },
       {
