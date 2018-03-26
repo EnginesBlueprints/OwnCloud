@@ -27,7 +27,7 @@
         "url": "http://www.gnu.org/copyleft/gpl.html"
       }
     },
-    "timestamp": "2018-03-26T11:34:33+11:00"
+    "timestamp": "2018-03-26T15:56:51+11:00"
   },
   "software": {
     "base": {
@@ -51,7 +51,7 @@
       },
       "post_install": {
         "language": "sh",
-        "content": "#/bin/bash\r\n\r\nif ! test -f /engines/var/run/flags/setup_ca\r\n then\r\n cat /usr/local/share/ca-certificates/engines_internal_ca.crt  >  resources/config/ca-bundle\r\ntouch /engines/var/run/flags/setup_ca\r\nfi"
+        "content": "#/bin/bash\r\n\r\nif ! test -f /engines/var/run/flags/setup_ca\r\n then\r\n cat /home/engines/etc/ssl/engines_internal_ca.crt  >  resources/config/ca-bundle\r\n touch /engines/var/run/flags/setup_ca\r\nfi"
       },
       "shutdown": {
         "language": "sh"
