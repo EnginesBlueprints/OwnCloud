@@ -27,7 +27,7 @@
         "url": "http://www.gnu.org/copyleft/gpl.html"
       }
     },
-    "timestamp": "2018-03-26T11:10:36+11:00"
+    "timestamp": "2018-03-26T11:34:33+11:00"
   },
   "software": {
     "base": {
@@ -95,7 +95,7 @@
         "package": "php7.0-ldap"
       },
       {
-        "package": "php7.0-apcu"
+        "package": "php-apcu"
       }
     ],
     "installed_packages": [
