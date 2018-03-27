@@ -27,7 +27,7 @@
         "url": "http://www.gnu.org/copyleft/gpl.html"
       }
     },
-    "timestamp": "2018-03-28T10:41:24+11:00"
+    "timestamp": "2018-03-28T10:50:34+11:00"
   },
   "software": {
     "base": {
@@ -254,8 +254,18 @@
             "input": {
               "type": "string"
             }
+          },
+          {
+            "name": "options",
+            "input": {
+              "type": "string"
+            }
           }
-        ]
+        ],
+        "script": {
+          "language": "sh",
+          "content": "#!/bin/bash\r\n. /home/engines/functions/params_to_env.sh\r\nparams_to_env\r\n\r\ncommand=`echo $command | sed \"s/[;&]//g\"`\r\noption=`echo options | sed \"s/[;&]//g\"`\r\n/home/app/occ $command $options\r\n"
+        }
       }
     ],
     "framework_specific": {
