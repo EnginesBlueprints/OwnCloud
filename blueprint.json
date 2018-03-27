@@ -27,7 +27,7 @@
         "url": "http://www.gnu.org/copyleft/gpl.html"
       }
     },
-    "timestamp": "2018-03-28T09:29:35+11:00"
+    "timestamp": "2018-03-28T10:32:39+11:00"
   },
   "software": {
     "base": {
@@ -51,7 +51,7 @@
       },
       "post_install": {
         "language": "sh",
-        "content": "#/bin/bash\r\n\r\nif ! test -f /engines/var/run/flags/setup_ca\r\n then\r\n cat /home/engines/etc/ssl/engines_internal_ca.crt  >  resources/config/ca-bundle\r\n touch /engines/var/run/flags/setup_ca\r\nfi"
+        "content": "#/bin/bash\r\n\r\n/home/app/occ background:cron\r\n/home/app/occ market:install user_ldap\r\n\r\nif ! test -f /engines/var/run/flags/setup_ca\r\n then\r\n cat /home/engines/etc/ssl/engines_internal_ca.crt  >  resources/config/ca-bundle\r\n touch /engines/var/run/flags/setup_ca\r\nfi"
       },
       "shutdown": {
         "language": "sh"
@@ -202,7 +202,7 @@
         "type_path": "ldap",
         "variables": {
           "type": "group",
-          "cn": "_Engines_Builder(engine_name)",
+          "cn": "Owncloud_Users",
           "read_access": "all",
           "write_access": "none",
           "service_name": "_Engines_Fields(cn)__Engines_Fields(type)"
@@ -240,6 +240,24 @@
     "components": {
       "path": "/home/app/apps"
     },
+    "actionators": [
+      {
+        "name": "occ",
+        "label": "occ",
+        "description": "ownCloud’s occ command (ownCloud console) is ownCloud’s command-line interface.\r\nYou can perform many common server operations with occ, such as installing and upgrading ownCloud, managing users and groups, encryption, passwords, LDAP setting, and more.",
+        "return_type": "plain_text",
+        "enable_logging": true,
+        "variables": [
+          {
+            "name": "command",
+            "mandatory": true,
+            "input": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    ],
     "framework_specific": {
       "custom_php_inis": [
         {
