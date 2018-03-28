@@ -27,7 +27,7 @@
         "url": "http://www.gnu.org/copyleft/gpl.html"
       }
     },
-    "timestamp": "2018-03-28T10:50:34+11:00"
+    "timestamp": "2018-03-28T11:19:45+11:00"
   },
   "software": {
     "base": {
@@ -71,13 +71,7 @@
         "package": "php7.0-gd"
       },
       {
-        "package": "libreoffice-base-core"
-      },
-      {
         "package": "php7.0-json"
-      },
-      {
-        "package": "libreoffice-common"
       },
       {
         "package": "libav-tools"
