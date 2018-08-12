@@ -27,7 +27,7 @@
         "url": "http://www.gnu.org/copyleft/gpl.html"
       }
     },
-    "timestamp": "2018-07-20T17:48:46+10:00"
+    "timestamp": "2018-08-12T19:36:57+10:00"
   },
   "software": {
     "base": {
@@ -227,19 +227,16 @@
     },
     "file_write_permissions": [
       {
-        "path": "config"
-      },
-      {
-        "path": "apps",
-        "recursive": true
-      },
-      {
         "path": "resources/config/ca-bundle"
       }
     ],
     "persistent_directories": [
       {
         "path": "/home/app/config",
+        "volume_name": "config"
+      },
+      {
+        "path": "/home/app/apps",
         "volume_name": "config"
       }
     ],
