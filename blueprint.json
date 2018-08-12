@@ -27,7 +27,7 @@
         "url": "http://www.gnu.org/copyleft/gpl.html"
       }
     },
-    "timestamp": "2018-08-12T19:57:38+10:00"
+    "timestamp": "2018-08-12T19:58:33+10:00"
   },
   "software": {
     "base": {
@@ -227,7 +227,7 @@
     },
     "file_write_permissions": [
       {
-        "path": "resources/config/ca-bundle"
+        "path": "/hom/app/resources/config/ca-bundle"
       }
     ],
     "persistent_directories": [
