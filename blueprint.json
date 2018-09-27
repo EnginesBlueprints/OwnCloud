@@ -27,7 +27,7 @@
         "url": "http://www.gnu.org/copyleft/gpl.html"
       }
     },
-    "timestamp": "2018-09-27T10:32:04+10:00"
+    "timestamp": "2018-09-27T11:02:18+10:00"
   },
   "software": {
     "base": {
@@ -171,14 +171,6 @@
           "group": "_Engines_Builder(data_gid)",
           "service_name": "_Engines_Builder(engine_name)_data",
           "engine_path": "/home/fs/data"
-        }
-      },
-      {
-        "publisher_namespace": "EnginesSystem",
-        "type_path": "auth",
-        "variables": {
-          "prefix": "host",
-          "owner": "_Engines_Builder(cont_user_id)"
         }
       },
       {
