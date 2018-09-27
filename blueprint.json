@@ -27,7 +27,7 @@
         "url": "http://www.gnu.org/copyleft/gpl.html"
       }
     },
-    "timestamp": "2018-09-27T11:02:18+10:00"
+    "timestamp": "2018-09-27T15:09:46+10:00"
   },
   "software": {
     "base": {
@@ -199,9 +199,9 @@
         "type_path": "ldap_ou",
         "variables": {
           "type": "ou",
-          "ou": null,
+          "cn": "cloudou",
           "read_access": "all",
-          "write_access": null,
+          "write_access": "",
           "service_name": "ou_Engines_Field(cn)"
         }
       }
