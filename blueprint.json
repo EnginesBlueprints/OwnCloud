@@ -27,7 +27,7 @@
         "url": "http://www.gnu.org/copyleft/gpl.html"
       }
     },
-    "timestamp": "2018-09-27T09:52:33+10:00"
+    "timestamp": "2018-09-27T10:32:04+10:00"
   },
   "software": {
     "base": {
@@ -177,7 +177,7 @@
         "publisher_namespace": "EnginesSystem",
         "type_path": "auth",
         "variables": {
-          "kerberos": "_Engines_Builder(engine_name)",
+          "prefix": "host",
           "owner": "_Engines_Builder(cont_user_id)"
         }
       },
@@ -193,24 +193,24 @@
       },
       {
         "publisher_namespace": "EnginesSystem",
-        "type_path": "ldap",
+        "type_path": "ldap_group",
         "variables": {
           "type": "group",
-          "cn": "Owncloud Users",
+          "cn": "_Engines_Builder(engine_name)",
           "read_access": "all",
           "write_access": "none",
-          "service_name": "_Engines_Fields(cn)__Engines_Fields(type)"
+          "service_name": "group_Engines_Field(cn)"
         }
       },
       {
         "publisher_namespace": "EnginesSystem",
-        "type_path": "ldap",
+        "type_path": "ldap_ou",
         "variables": {
           "type": "ou",
-          "cn": "_Engines_Builder(engine_name)",
+          "ou": null,
           "read_access": "all",
-          "write_access": "none",
-          "service_name": "_Engines_Field(cn)__Engine_Fields(type)"
+          "write_access": null,
+          "service_name": "ou_Engines_Field(cn)"
         }
       }
     ],
