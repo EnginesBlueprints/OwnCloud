@@ -27,7 +27,7 @@
         "url": "http://www.gnu.org/copyleft/gpl.html"
       }
     },
-    "timestamp": "2018-09-27T15:09:46+10:00"
+    "timestamp": "2018-10-18T11:55:11+11:00"
   },
   "software": {
     "base": {
@@ -202,7 +202,7 @@
           "cn": "cloudou",
           "read_access": "all",
           "write_access": "",
-          "service_name": "ou_Engines_Field(cn)"
+          "service_name": "owncloud_ou"
         }
       }
     ],
