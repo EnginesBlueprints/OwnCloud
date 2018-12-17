@@ -27,7 +27,7 @@
         "url": "http://www.gnu.org/copyleft/gpl.html"
       }
     },
-    "timestamp": "2018-11-01T09:52:41+11:00"
+    "timestamp": "2018-12-17T14:41:03+11:00"
   },
   "software": {
     "base": {
@@ -49,9 +49,11 @@
       "install": {
         "language": "sh"
       },
-      "post_install": {
-        "language": "sh",
+      "first_run": {
         "content": "#/bin/bash\r\n\r\n/home/app/occ maintenance:install -n --database \"mysql\" --database-host  mysql --database-name $dbname --data-dir /home/fs/data --database-user $dbuser --database-pass $dbpasswd --admin-user \"admin\" --admin-pass $admin_password\r\n/home/app/occ background:cron\r\n/home/app/occ market:install user_ldap\r\n/home/app/occ ldap:create-empty-config default\r\n/home/app/occ ldap:set-config default ldapAgentName $ldap_dn\r\n/home/app/occ ldap:set-config default ldapAgentPassword $ldap_password\r\n/home/app/occ ldap:set-config default ldapBase dc=engines,dc=internal     \r\n/home/app/occ ldap:set-config default ldapBaseGroups ou=Groups,dc=engines,dc=internal\r\n/home/app/occ ldap:set-config default ldapEmailAttribute maildrop\r\n/home/app/occ ldap:set-config default ldapBaseUsers ou=People,dc=engines,dc=internal\r\n/home/app/occ ldap:set-config default ldapGroupMemberAssocAttr uniqueMember\r\n/home/app/occ ldap:set-config default ldapHost ldap\r\n/home/app/occ ldap:set-config default ldapLoginFilter \"(&(|(objectclass=inetOrgPerson))(uid=%uid))\" \r\n/home/app/occ ldap:set-config default ldapLoginFilterEmail 0\r\n/home/app/occ ldap:set-config default lldapLoginFilterMode 0\r\n/home/app/occ ldap:set-config default ldapLoginFilterUsername 1\r\n/home/app/occ ldap:set-config default ldapPort 389\r\n/home/app/occ ldap:set-config default lldapUserDisplayName cn\r\n/home/app/occ ldap:set-config default ldapUserDisplayName cn\r\n/home/app/occ ldap:set-config default ldapUserDisplayName2 uid\r\n/home/app/occ ldap:set-config default ldapUserFilter  \"(|(objectclass=inetOrgPerson))\"\r\n/home/app/occ ldap:set-config default ldapUserFilterObjectclass inetOrgPerson\r\n/home/app/occ ldap:set-config default ldapExpertUUIDUserAttr entryuuid\r\n/home/app/occ ldap:set-config default ldapExpertUsernameAttr uid\r\n/home/app/occ ldap:set-config default ldapGroupFilter \"cn=Owncloud Users,ou=$CONTAINER_NAME,ou=Applications,ou=Groups,dc=engines,dc=internal\"\r\n/home/app/occ ldap:set-config default ldapUserFilterMode 1\r\n/home/app/occ ldap:set-config default ldapGroupFilterMode 1\r\n/home/app/occ config:system:set trusted_domains  0 --value=localhost\r\n/home/app/occ config:system:set trusted_domains  1 --value=_Engines_Builder(hostname).engines.internal\r\n/home/app/occ config:system:set trusted_domains  2 --value=_Engines_Builder(fqdn)\r\nif ! test -f /engines/var/run/flags/setup_ca\r\n then\r\n cat /home/engines/etc/ssl/engines_internal_ca.crt  >  resources/config/ca-bundle\r\n touch /engines/var/run/flags/setup_ca\r\nfi"
+      },
+      "post_install": {
+        "language": "sh"
       },
       "shutdown": {
         "language": "sh"
