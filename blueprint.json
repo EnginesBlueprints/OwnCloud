@@ -27,7 +27,7 @@
         "url": "http://www.gnu.org/copyleft/gpl.html"
       }
     },
-    "timestamp": "2019-02-22T13:33:42+11:00"
+    "timestamp": "2019-02-22T14:27:19+11:00"
   },
   "software": {
     "base": {
@@ -122,7 +122,7 @@
         "type": "apache"
       },
       {
-        "name": "mcrypt",
+        "name": "mcrypt-1.0.1",
         "type": "pecl",
         "os_package": "libmcrypt-dev"
       }
