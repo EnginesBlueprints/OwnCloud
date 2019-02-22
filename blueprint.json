@@ -27,7 +27,7 @@
         "url": "http://www.gnu.org/copyleft/gpl.html"
       }
     },
-    "timestamp": "2019-02-22T14:27:19+11:00"
+    "timestamp": "2019-02-22T15:30:25+11:00"
   },
   "software": {
     "base": {
@@ -86,6 +86,12 @@
       },
       {
         "package": "php-apcu"
+      },
+      {
+        "package": "mcrypt"
+      },
+      {
+        "package": "libmcrypt-dev"
       }
     ],
     "installed_packages": [
