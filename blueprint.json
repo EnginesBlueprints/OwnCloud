@@ -27,7 +27,7 @@
         "url": "http://www.gnu.org/copyleft/gpl.html"
       }
     },
-    "timestamp": "2019-02-22T15:30:25+11:00"
+    "timestamp": "2019-06-03T10:46:50+10:00"
   },
   "software": {
     "base": {
@@ -108,7 +108,7 @@
       {
         "name": "intl",
         "type": "php",
-        "os_package": "php7.2-intl"
+        "os_package": "php-intl"
       },
       {
         "name": "negotiation",
@@ -121,16 +121,11 @@
       {
         "name": "php-zip",
         "type": "php",
-        "os_package": "php7.2-zip"
+        "os_package": "php-zip"
       },
       {
         "name": "headers",
         "type": "apache"
-      },
-      {
-        "name": "mcrypt-1.0.1",
-        "type": "pecl",
-        "os_package": "libmcrypt-dev"
       }
     ],
     "service_configurations": [
@@ -149,12 +144,13 @@
         "publisher_namespace": "EnginesSystem",
         "type_path": "filesystem/local/filesystem",
         "variables": {
-          "permissions": "rw",
-          "engine_path": "/home/fs/config",
-          "volume_src": "",
           "service_name": "config",
+          "volume_src": "",
+          "engine_path": "/home/fs/config",
+          "permissions": "rw",
+          "user": "_Engines_Builder(data_uid)",
           "group": "_Engines_Builder(data_gid)",
-          "user": "_Engines_Builder(data_uid)"
+          "fw_user": "_Engines_Builder(cont_user_id)"
         }
       },
       {
@@ -173,12 +169,13 @@
         "publisher_namespace": "EnginesSystem",
         "type_path": "filesystem/local/filesystem",
         "variables": {
-          "user": "_Engines_Builder(data_uid)",
-          "volume_src": "",
-          "permissions": "rw",
-          "group": "_Engines_Builder(data_gid)",
           "service_name": "_Engines_Builder(engine_name)_data",
-          "engine_path": "/home/fs/data"
+          "volume_src": "",
+          "engine_path": "/home/fs/data",
+          "permissions": "rw",
+          "user": "_Engines_Builder(data_uid)",
+          "group": "_Engines_Builder(data_gid)",
+          "fw_user": "_Engines_Builder(cont_user_id)"
         }
       },
       {
