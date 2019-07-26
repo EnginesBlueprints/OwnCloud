@@ -27,7 +27,7 @@
         "url": "http://www.gnu.org/copyleft/gpl.html"
       }
     },
-    "timestamp": "2019-06-03T10:46:50+10:00"
+    "timestamp": "2019-07-26T13:54:02+10:00"
   },
   "software": {
     "base": {
@@ -150,7 +150,8 @@
           "permissions": "rw",
           "user": "_Engines_Builder(data_uid)",
           "group": "_Engines_Builder(data_gid)",
-          "fw_user": "_Engines_Builder(cont_user_id)"
+          "fw_user": "_Engines_Builder(cont_user_id)",
+          "exclude_from_backup": "false"
         }
       },
       {
@@ -175,7 +176,8 @@
           "permissions": "rw",
           "user": "_Engines_Builder(data_uid)",
           "group": "_Engines_Builder(data_gid)",
-          "fw_user": "_Engines_Builder(cont_user_id)"
+          "fw_user": "_Engines_Builder(cont_user_id)",
+          "exclude_from_backup": "false"
         }
       },
       {
@@ -185,7 +187,8 @@
           "access_dn": "uid=_Engines_Builder(engine_name),ou=hosts,ou=Engines,dc=engines,dc=internal",
           "ldap_password": "_Engines_System(random(8))",
           "service_name": "_Engines_Builder(engine_name)",
-          "type": "access"
+          "type": "access",
+          "group_membership": null
         }
       },
       {
@@ -196,7 +199,7 @@
           "cn": "_Engines_Builder(engine_name)",
           "read_access": "all",
           "write_access": "none",
-          "service_name": "group_Engines_Field(cn)"
+          "service_name": "group__Engines_Builder(engine_name)"
         }
       },
       {
@@ -275,7 +278,7 @@
         ],
         "script": {
           "language": "sh",
-          "content": "#!/bin/bash\r\n. /home/engines/functions/params_to_env.sh\r\nparams_to_env\r\n\r\ncommand=`echo $command | sed \"s/[;&]//g\"`\r\noption=`echo options | sed \"s/[;&]//g\"`\r\n/home/app/occ $command $options\r\n"
+          "content": "#!/bin/sh\r\n. /home/engines/functions/params_to_env.sh\r\nparams_to_env\r\n\r\ncommand=`echo $command | sed \"s/[;&]//g\"`\r\noption=`echo options | sed \"s/[;&]//g\"`\r\n/home/app/occ $command $options\r\n"
         }
       }
     ],
