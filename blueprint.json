@@ -27,7 +27,7 @@
         "url": "http://www.gnu.org/copyleft/gpl.html"
       }
     },
-    "timestamp": "2020-02-21T15:33:12+11:00"
+    "timestamp": "2020-06-02T08:26:00+10:00"
   },
   "software": {
     "base": {
@@ -163,7 +163,8 @@
           "db_username": "_Engines_Builder(engine_name)",
           "db_password": "_Engines_System(random(10))",
           "collation": "utf8_general_ci",
-          "full_access": "false"
+          "full_access": "false",
+          "char_set": "utf8"
         }
       },
       {
@@ -248,6 +249,10 @@
       },
       {
         "path": "/home/app/apps",
+        "volume_name": "config"
+      },
+      {
+        "path": "/home/app/apps-external",
         "volume_name": "config"
       }
     ],
