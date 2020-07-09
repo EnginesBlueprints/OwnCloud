@@ -27,7 +27,7 @@
         "url": "http://www.gnu.org/copyleft/gpl.html"
       }
     },
-    "timestamp": "2020-06-11T10:32:07+10:00"
+    "timestamp": "2020-07-10T09:33:06+10:00"
   },
   "software": {
     "base": {
@@ -98,7 +98,7 @@
       {
         "name": "owncloud-10.3.2.tar.bz2",
         "download_type": "http(s)",
-        "source_url": "https://download.owncloud.org/community/owncloud-10.3.2.tar.bz2",
+        "source_url": "https://download.owncloud.org/community/owncloud-latest.tar.bz2",
         "destination": "./",
         "extraction_command": "tar -xpf",
         "path_to_extracted": "owncloud"
