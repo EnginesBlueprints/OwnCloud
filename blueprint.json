@@ -27,7 +27,7 @@
         "url": "http://www.gnu.org/copyleft/gpl.html"
       }
     },
-    "timestamp": "2020-08-18T10:27:42+10:00"
+    "timestamp": "2020-09-10T10:39:19+10:00"
   },
   "software": {
     "base": {
@@ -70,10 +70,10 @@
         "package": "libicu-dev"
       },
       {
-        "package": "php7.2-gd"
+        "package": "php-gd"
       },
       {
-        "package": "php7.2-json"
+        "package": "php-json"
       },
       {
         "package": "php-net-ftp"
@@ -200,7 +200,8 @@
           "cn": "_Engines_Builder(engine_name)",
           "read_access": "all",
           "write_access": "none",
-          "service_name": "group__Engines_Builder(engine_name)"
+          "service_name": "group__Engines_Builder(engine_name)",
+          "ldap_group_type": "posix"
         }
       },
       {
